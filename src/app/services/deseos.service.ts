@@ -8,6 +8,9 @@ export class DeseosService {
   listas: Lista[] = [];
 
   constructor() {
-    console.warn("SERVICIO");
+    const lista1 = new Lista("Recolectar gemas");
+    const lista2 = new Lista("Vengadores");
+
+    this.listas.push(lista1, lista2);
   }
 }
