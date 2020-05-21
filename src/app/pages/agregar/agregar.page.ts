@@ -19,8 +19,6 @@ export class AgregarPage implements OnInit {
   ) {
     const listaId = this.route.snapshot.paramMap.get("listaId"); //lee el url sin usar observables, listaId es la parte variable del URL tal y como figura en tab1-routing.module.ts
     this.lista = this.deseosService.obtenerLista(listaId);
-    console.log(this.lista);
-    //console.log(this.lista);
   }
 
   ngOnInit() {}
@@ -37,9 +35,7 @@ export class AgregarPage implements OnInit {
   }
 
   cambioCheck(item: ListaItem) {
-    const pendientes = this.lista.item.filter((itemData) => {
-      return itemData.completado;
-    }).length;
+    const pendientes = this.lista.item.filter((itemData) => {}).length;
 
     if (pendientes === 0) {
       this.lista.fin = new Date();
@@ -48,6 +44,7 @@ export class AgregarPage implements OnInit {
       this.lista.fin = null;
       this.lista.acabada = false;
     }
+
     this.deseosService.guardarStorage();
   }
 

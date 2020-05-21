@@ -34,7 +34,7 @@ export class Tab1Page {
           text: "Cancelar",
           role: "cancel",
           handler: () => {
-            console.log("cancelar");
+            return;
           },
         },
         {
@@ -51,9 +51,5 @@ export class Tab1Page {
     });
 
     alert.present();
-  }
-
-  listaSeleccionada(lista: Lista) {
-    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
   }
 }
